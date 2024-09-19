@@ -90,6 +90,10 @@ esp32_ble_tracker:
       - lambda: |-
             auto device = x;
 
+            if (device.get_name() != "NEEWER-RGB480") {
+              return;
+            }
+
             ESP_LOGD(
               "neewer", 
               "Found bluetooth device identifying as neewer light %s (MAC: %s, RSSI: %d)", 
